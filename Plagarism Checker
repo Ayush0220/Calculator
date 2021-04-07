@@ -1,0 +1,39 @@
+#Program for plagarism checker in python:
+#Using file handling:
+
+#Creating function for store data in file:
+
+def plagarism():
+  a = str(input("Enter your answer (a): "))
+  b = str(input("Enter your answer (b): "))
+  
+#Add data in file:  
+
+  file = open("a.txt","w")
+  file.write (a)
+  file.write (",")
+  file.close()
+  file =  open("b.txt","w")
+  file.write (b)
+  file.write (",")
+  file.close()
+  print("Your answers are saved")
+  read()          #Calling function which do operations:    
+
+#Create function for fetch data in the file:
+
+def read(): 
+  file1 = open("a.txt","r")
+  file2 = open("b.txt","r")
+  for a in file1:                    
+    for b in file2:     
+
+      if a==b:
+        print("You cheated, Write another answer")
+        return plagarism()
+      elif a!=b:
+        print("Thank you for your responses")
+      else:
+        print("Study")
+      
+print(plagarism())
